@@ -16,11 +16,13 @@ Projekt został wykonany w Node.js z wykorzystaniem frameworka Express, szablon�
 1. Sklonuj repozytorium projektu.
 2. Przejdź do katalogu projektu.
 3. Zainstaluj zależności:
+   ```bash
    npm install
-4. Uruchom aplikację:
+5. Uruchom aplikację:
+   ```bash
    npm start
-5. Uruchom bazę danych MongoDB zgodnie z instrukcjami zawartymi w pliku docker.txt.
-6. Otwórz aplikację w przeglądarce:
+7. Uruchom bazę danych MongoDB zgodnie z instrukcjami zawartymi w pliku docker.txt.
+8. Otwórz aplikację w przeglądarce:
    http://localhost:3003
 
 ## Endpointy
