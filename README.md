@@ -55,5 +55,5 @@ Projekt zosta≈Ç wykonany w Node.js z wykorzystaniem frameworka Express, szablon√
 ## Licencja
 MIT - patrz LICENSE
 
-## Autorzy:
+## Autorzy
 - Patrycja Kula
