@@ -24,21 +24,20 @@ Projekt zosta≈Ç wykonany w Node.js z wykorzystaniem frameworka Express, szablon√
    http://localhost:3003
 
 ## Endpointy
-GET /
-GET /alpaca/new
-
-POST /alpaca/new
-GET /alpaca/:id
-GET /alpaca/:id/edit
-POST /alpaca/:id/edit
-POST /alpaca/:id/delete
-GET /register
-POST /register
-GET /users
-POST /users/:id/delete
-GET /buy
-POST /buy
-GET /orders
+- GET /
+- GET /alpaca/new
+- POST /alpaca/new
+- GET /alpaca/:id
+- GET /alpaca/:id/edit
+- POST /alpaca/:id/edit
+- POST /alpaca/:id/delete
+- GET /register
+- POST /register
+- GET /users
+- POST /users/:id/delete
+- GET /buy
+- POST /buy
+- GET /orders
 
 ## Technologie
 - Node.js
