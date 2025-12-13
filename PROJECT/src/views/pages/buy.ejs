@@ -1,0 +1,57 @@
+<%- include('../partials/header') %>
+
+<h2>Zakup alpaki</h2>
+
+<p>
+    Aby kupić alpakę, podaj dane istniejącego użytkownika.
+    Jeśli nie masz konta – <a href="/register">utwórz je tutaj</a>.
+</p>
+
+<% if (errors.length) { %>
+    <div class="errors">
+        <ul>
+            <% errors.forEach(error => { %>
+                <li><%= error %></li>
+            <% }) %>
+        </ul>
+    </div>
+<% } %>
+
+<form method="POST">
+
+    <label for="username">Login:</label><br>
+    <input
+        id="username"
+        name="username"
+        value="<%= values.username ? values.username : '' %>"
+        required
+    >
+    <br>
+
+    <label for="password">Hasło:</label><br>
+    <input
+        id="password"
+        name="password"
+        type="password"
+        required
+    >
+    <br>
+
+    <label for="alpaca">Wybierz alpakę:</label><br>
+    <select id="alpaca" name="alpacaId" required>
+        <option value="">-- wybierz alpakę --</option>
+
+        <% alpacas.forEach(alpaca => { %>
+            <option value="<%= alpaca._id.toString() %>">
+                <%= alpaca.name %> – <%= alpaca.price %> zł
+            </option>
+        <% }) %>
+    </select>
+
+    <br><br>
+
+    <button type="submit">Kup alpakę</button>
+
+</form>
+
+<%- include('../partials/footer') %>

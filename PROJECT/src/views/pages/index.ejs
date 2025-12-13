@@ -1,0 +1,50 @@
+<%- include('../partials/header') %>
+
+<h2>Lista dostępnych alpak:</h2>
+
+<form method="GET" class="filters-inline">
+
+    <label for="color">Kolor:</label>
+    <select name="color" id="color">
+        <option value="">-- wszystkie --</option>
+        <% colors.forEach(color => { %>
+            <option value="<%= color %>" <%= selectedColor === color ? 'selected' : '' %>>
+                <%= color %>
+            </option>
+        <% }) %>
+    </select>
+
+    <label for="sort">Sortuj:</label>
+    <select name="sort" id="sort">
+        <option value="">brak</option>
+        <option value="price" <%= selectedSort === 'price' ? 'selected' : '' %>>Cena</option>
+        <option value="name" <%= selectedSort === 'name' ? 'selected' : '' %>>Nazwa</option>
+    </select>
+
+    <button type="submit">OK</button>
+
+</form>
+
+
+<ul>
+<% alpacas.forEach(a => { %>
+    <li>
+        <%= a.name %> - <%= a.color %> - <%= a.price %> zł
+
+        <div class="alpaca-actions">
+            <a href="/alpaca/<%= a._id %>">info</a>
+            <a href="/alpaca/<%= a._id %>/edit">edit</a>
+
+            <form
+                method="POST"
+                action="/alpaca/<%= a._id %>/delete"
+                class="delete-form"
+            >
+                <button type="submit">Usuń</button>
+            </form>
+        </div>
+    </li>
+<% }) %>
+</ul>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,63 @@
+<%- include('../partials/header') %>
+
+<h2>
+    <%= alpaca ? 'Edytuj alpakę' : 'Dodaj nową alpakę' %>
+</h2>
+
+<p>
+    Wypełnij poniższy formularz, aby
+    <%= alpaca ? 'zmienić dane istniejącej alpaki.' : 'dodać nową alpakę do bazarku.' %>
+</p>
+
+<% if (errors.length) { %>
+    <div class="errors">
+        <ul>
+            <% errors.forEach(error => { %>
+                <li><%= error %></li>
+            <% }) %>
+        </ul>
+    </div>
+<% } %>
+
+<form method="POST">
+
+    <label for="name">Nazwa alpaki:</label><br>
+    <input
+        id="name"
+        name="name"
+        type="text"
+        placeholder="np. Bartek"
+        value="<%= alpaca?.name || '' %>"
+        required
+    >
+    <br>
+
+    <label for="price">Cena (w zł):</label><br>
+    <input
+        id="price"
+        name="price"
+        type="number"
+        min="1"
+        placeholder="np. 5000"
+        value="<%= alpaca?.price || '' %>"
+        required
+    >
+    <br>
+
+    <label for="color">Kolor alpaki:</label><br>
+    <input
+        id="color"
+        name="color"
+        type="text"
+        placeholder="np. biały"
+        value="<%= alpaca?.color || '' %>"
+    >
+    <br>
+
+    <button type="submit">
+        <%= alpaca ? 'Zapisz zmiany' : 'Dodaj alpakę' %>
+    </button>
+
+</form>
+
+<%- include('../partials/footer') %>

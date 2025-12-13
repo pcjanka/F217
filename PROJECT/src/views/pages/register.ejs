@@ -1,0 +1,45 @@
+<%- include('../partials/header') %>
+
+<h2>Utwórz konto</h2>
+
+<% if (errors.length) { %>
+    <div class="errors">
+        <ul>
+            <% errors.forEach(error => { %>
+                <li><%= error %></li>
+            <% }) %>
+        </ul>
+    </div>
+<% } %>
+
+<form method="POST">
+
+    <label for="username">Login:</label><br>
+    <input
+        id="username"
+        name="username"
+        type="text"
+        value="<%= values.username ? values.username : '' %>"
+        required
+    >   
+    <br><br>
+
+    <label for="password">Hasło:</label><br>
+    <input
+        id="password"
+        name="password"
+        type="password"
+        required
+    >
+    <br><br>
+
+    <button type="submit">Utwórz konto</button>
+
+</form>
+
+<p>
+    Masz już konto?
+    <a href="/buy">Przejdź do zakupu</a>
+</p>
+
+<%- include('../partials/footer') %>
