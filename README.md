@@ -26,6 +26,7 @@ Projekt zosta≈Ç wykonany w Node.js z wykorzystaniem frameworka Express, szablon√
 ## Endpointy
 GET /
 GET /alpaca/new
+
 POST /alpaca/new
 GET /alpaca/:id
 GET /alpaca/:id/edit
